@@ -1,0 +1,311 @@
+﻿using System;
+using System.Collections.Generic; 
+using System.Linq;
+using System.Text; 
+using System.Threading.Tasks; 
+
+namespace ConsoleApp2
+{
+    internal class Program 
+    {
+       
+        internal class NodoDoble
+        {
+            public int dato; // Almacena el valor entero que guarda el nodo
+            public NodoDoble siguiente; // Referencia al nodo siguiente en la lista (hacia adelante)
+            public NodoDoble anterior; // Referencia al nodo anterior en la lista (hacia atrás)
+
+            // Constructor del nodo, recibe el dato que se quiere almacenar
+            public NodoDoble(int dato)
+            {
+                this.dato = dato; // Asigna el valor recibido al campo "dato" del nodo
+                siguiente = null; // Al crear el nodo, no tiene nodo siguiente todavía
+                anterior = null; // Al crear el nodo, no tiene nodo anterior todavía
+            }
+        }
+
+        // Método principal, es donde inicia la ejecución del programa
+        static void Main(string[] args)
+        {
+            ListaDoble lista = new ListaDoble(); // Se crea una nueva lista doblemente enlazada vacía
+
+            int opcion; // Variable para guardar la opción del menú elegida por el usuario
+            int dato; // Variable para guardar el dato que el usuario ingresa (a agregar, eliminar o buscar)
+
+            // Bucle "hacer-mientras" que muestra el menú repetidamente hasta que el usuario elija salir (opción 7)
+            do
+            {
+                Console.Clear(); // Limpia la consola para mostrar el menú de forma más ordenada
+
+                // Se imprime el encabezado y las opciones del menú
+                Console.WriteLine("=================================");
+                Console.WriteLine("      LISTA DOBLEMENTE ENLAZADA");
+                Console.WriteLine("=================================");
+                Console.WriteLine("1. Agregar al inicio");
+                Console.WriteLine("2. Agregar al final");
+                Console.WriteLine("3. Eliminar");
+                Console.WriteLine("4. Mostrar adelante");
+                Console.WriteLine("5. Mostrar atrás");
+                Console.WriteLine("6. Buscar un dato");
+                Console.WriteLine("7. Salir");
+                Console.WriteLine("=================================");
+
+                Console.Write("Seleccione una opción: "); // Solicita al usuario que ingrese una opción
+                opcion = int.Parse(Console.ReadLine()); // Lee la entrada del usuario y la convierte a entero
+
+                Console.Clear(); // Limpia la consola nuevamente antes de mostrar el resultado de la opción elegida
+
+                // Estructura de selección múltiple según la opción elegida por el usuario
+                switch (opcion)
+                {
+                    case 1: // Opción para agregar un dato al inicio de la lista
+
+                        Console.Write("Ingrese el dato: "); // Pide al usuario el dato a insertar
+                        dato = int.Parse(Console.ReadLine()); // Convierte la entrada a entero y la guarda en "dato"
+
+                        lista.agregarAlInicio(dato); // Llama al método que inserta el dato al inicio de la lista
+
+                        Console.WriteLine("Dato agregado al inicio."); // Mensaje de confirmación al usuario
+
+                        break; // Termina el caso 1 y sale del switch
+
+
+                    case 2: // Opción para agregar un dato al final de la lista
+
+                        Console.Write("Ingrese el dato: "); // Pide al usuario el dato a insertar
+                        dato = int.Parse(Console.ReadLine()); // Convierte la entrada a entero y la guarda en "dato"
+
+                        lista.agregarAlFinal(dato); // Llama al método que inserta el dato al final de la lista
+
+                        Console.WriteLine("Dato agregado al final."); // Mensaje de confirmación al usuario
+
+                        break; // Termina el caso 2 y sale del switch
+
+
+                    case 3: // Opción para eliminar un dato de la lista
+
+                        Console.Write("Ingrese el dato a eliminar: "); // Pide al usuario el dato que desea eliminar
+                        dato = int.Parse(Console.ReadLine()); // Convierte la entrada a entero y la guarda en "dato"
+
+                        lista.eliminar(dato); // Llama al método que busca y elimina el dato de la lista
+
+                        break; // Termina el caso 3 y sale del switch
+
+
+                    case 4: // Opción para mostrar la lista recorriéndola de inicio a fin
+
+                        Console.WriteLine("LISTA HACIA ADELANTE"); // Título indicando el sentido del recorrido
+                        Console.WriteLine(); // Imprime una línea en blanco para separar visualmente
+
+                        lista.imprimirAdelante(); // Llama al método que recorre e imprime la lista desde head hasta tail
+
+                        break; // Termina el caso 4 y sale del switch
+
+
+                    case 5: // Opción para mostrar la lista recorriéndola de fin a inicio
+
+                        Console.WriteLine("LISTA HACIA ATRÁS"); // Título indicando el sentido del recorrido
+                        Console.WriteLine(); // Imprime una línea en blanco para separar visualmente
+
+                        lista.imprimirAtras(); // Llama al método que recorre e imprime la lista desde tail hasta head
+
+                        break; // Termina el caso 5 y sale del switch
+
+
+                    case 6: // Opción para buscar un dato específico dentro de la lista
+
+                        Console.Write("Ingrese el dato a buscar: "); // Pide al usuario el dato que desea buscar
+                        dato = int.Parse(Console.ReadLine()); // Convierte la entrada a entero y la guarda en "dato"
+
+                        lista.buscar(dato); // Llama al método que recorre la lista buscando el dato
+
+                        break; // Termina el caso 6 y sale del switch
+
+
+                    case 7: // Opción para finalizar el programa
+
+                        Console.WriteLine("Programa finalizado."); // Mensaje de despedida al usuario
+
+                        break; // Termina el caso 7 y sale del switch (el bucle también terminará por la condición del "while")
+
+
+                    default: // Se ejecuta si el usuario ingresa un número que no corresponde a ninguna opción válida
+
+                        Console.WriteLine("Opción no válida."); // Mensaje de error indicando que la opción no existe
+
+                        break; // Termina el caso default y sale del switch
+                }
+
+                // Si la opción elegida no fue "salir", se pausa el programa para que el usuario pueda leer el resultado
+                if (opcion != 7)
+                {
+                    Console.WriteLine(); // Imprime una línea en blanco para separar visualmente
+                    Console.WriteLine("Presione ENTER para continuar..."); // Indica al usuario cómo continuar
+                    Console.ReadLine(); // Espera a que el usuario presione ENTER antes de volver a mostrar el menú
+                }
+
+            } while (opcion != 7); // El bucle se repite mientras la opción no sea 7 (salir)
+        }
+
+        // Clase que implementa la lógica de la lista doblemente enlazada
+        internal class ListaDoble
+        {
+            public NodoDoble head; // Referencia al primer nodo de la lista (cabeza)
+            public NodoDoble tail; // Referencia al último nodo de la lista (cola)
+
+            // Constructor de la lista, inicializa la lista vacía
+            public ListaDoble()
+            {
+                head = null; // Al crear la lista, no hay ningún nodo, por lo tanto head es nulo
+                tail = null; // Al crear la lista, no hay ningún nodo, por lo tanto tail es nulo
+            }
+
+            // Método para agregar un nuevo dato al inicio de la lista
+            public void agregarAlInicio(int dato)
+            {
+                NodoDoble nuevo = new NodoDoble(dato); // Se crea un nuevo nodo con el dato recibido
+
+                if (head == null) // Si la lista está vacía (no hay head)
+                {
+                    head = nuevo; // El nuevo nodo se convierte en la cabeza de la lista
+                    tail = nuevo; // El nuevo nodo también se convierte en la cola, ya que es el único nodo
+                }
+                else // Si la lista ya tiene al menos un elemento
+                {
+                    nuevo.siguiente = head; // El "siguiente" del nuevo nodo apunta al head actual
+                    head.anterior = nuevo; // El "anterior" del head actual ahora apunta al nuevo nodo
+                    head = nuevo; // El nuevo nodo pasa a ser el nuevo head de la lista
+                }
+            }
+
+            // Método para agregar un nuevo dato al final de la lista
+            public void agregarAlFinal(int dato)
+            {
+                NodoDoble nuevo = new NodoDoble(dato); // Se crea un nuevo nodo con el dato recibido
+
+                if (head == null) // Si la lista está vacía (no hay head)
+                {
+                    head = nuevo; // El nuevo nodo se convierte en la cabeza de la lista
+                    tail = nuevo; // El nuevo nodo también se convierte en la cola, ya que es el único nodo
+                }
+                else // Si la lista ya tiene al menos un elemento
+                {
+                    tail.siguiente = nuevo; // El "siguiente" del tail actual apunta al nuevo nodo
+                    nuevo.anterior = tail; // El "anterior" del nuevo nodo apunta al tail actual
+                    tail = nuevo; // El nuevo nodo pasa a ser el nuevo tail de la lista
+                }
+            }
+
+            // Método para recorrer e imprimir la lista desde el inicio (head) hasta el final (tail)
+            public void imprimirAdelante()
+            {
+                if (head == null) // Si no hay head, significa que la lista está vacía
+                {
+                    Console.WriteLine("La lista está vacía."); // Se informa al usuario que no hay elementos
+                    return; // Se termina la ejecución del método, ya que no hay nada que recorrer
+                }
+
+                NodoDoble actual = head; // Variable auxiliar que empieza apuntando al primer nodo (head)
+
+                while (actual != null) // Mientras existan nodos por recorrer (no se llegue al final)
+                {
+                    Console.Write(actual.dato + " "); // Imprime el dato del nodo actual seguido de un espacio
+                    actual = actual.siguiente; // Avanza al siguiente nodo de la lista
+                }
+
+                Console.WriteLine(); // Imprime un salto de línea al terminar de mostrar todos los datos
+            }
+
+            // Método para recorrer e imprimir la lista desde el final (tail) hasta el inicio (head)
+            public void imprimirAtras()
+            {
+                if (tail == null) // Si no hay tail, significa que la lista está vacía
+                {
+                    Console.WriteLine("La lista está vacía."); // Se informa al usuario que no hay elementos
+                    return; // Se termina la ejecución del método, ya que no hay nada que recorrer
+                }
+
+                NodoDoble actual = tail; // Variable auxiliar que empieza apuntando al último nodo (tail)
+
+                while (actual != null) // Mientras existan nodos por recorrer (no se llegue al inicio)
+                {
+                    Console.Write(actual.dato + " "); // Imprime el dato del nodo actual seguido de un espacio
+                    actual = actual.anterior; // Retrocede al nodo anterior de la lista
+                }
+
+                Console.WriteLine(); // Imprime un salto de línea al terminar de mostrar todos los datos
+            }
+
+            // Método para buscar un dato específico dentro de la lista
+            public void buscar(int dato)
+            {
+                NodoDoble actual = head; // Variable auxiliar que empieza apuntando al primer nodo (head)
+
+                while (actual != null) // Mientras existan nodos por recorrer
+                {
+                    if (actual.dato == dato) // Si el dato del nodo actual coincide con el dato buscado
+                    {
+                        Console.WriteLine("Dato encontrado."); // Se informa que el dato fue encontrado
+                        return; // Se termina el método inmediatamente, ya no es necesario seguir buscando
+                    }
+
+                    actual = actual.siguiente; // Avanza al siguiente nodo si no coincidió el dato
+                }
+
+                Console.WriteLine("Dato no encontrado."); // Si se recorrió toda la lista sin encontrarlo, se informa al usuario
+            }
+
+            // Método para eliminar un nodo que contenga un dato específico
+            public void eliminar(int dato)
+            {
+                if (head == null) // Si la lista está vacía, no hay nada que eliminar
+                {
+                    Console.WriteLine("La lista está vacía."); // Se informa al usuario
+                    return; // Se termina la ejecución del método
+                }
+
+                NodoDoble actual = head; // Variable auxiliar que empieza apuntando al primer nodo (head)
+
+                // Se recorre la lista mientras no se llegue al final y el dato del nodo actual no coincida con el buscado
+                while (actual != null && actual.dato != dato)
+                {
+                    actual = actual.siguiente; // Avanza al siguiente nodo
+                }
+
+                if (actual == null) // Si "actual" llegó a null, significa que se recorrió toda la lista sin encontrar el dato
+                {
+                    Console.WriteLine("Dato no encontrado."); // Se informa al usuario que el dato no existe en la lista
+                    return; // Se termina el método, ya que no hay nada que eliminar
+                }
+
+                // Caso 1: el nodo a eliminar es el único elemento de la lista (head y tail son el mismo nodo)
+                if (head == tail)
+                {
+                    head = null; // Se elimina la referencia al único nodo, dejando la lista vacía
+                    tail = null; // Se elimina también la referencia de tail, ya que era el mismo nodo
+                }
+                // Caso 2: el nodo a eliminar es el primero de la lista (head), pero hay más nodos después
+                else if (actual == head)
+                {
+                    head = head.siguiente; // El segundo nodo pasa a ser el nuevo head
+                    head.anterior = null; // El nuevo head ya no debe apuntar hacia atrás al nodo eliminado
+                }
+                // Caso 3: el nodo a eliminar es el último de la lista (tail), pero hay más nodos antes
+                else if (actual == tail)
+                {
+                    tail = tail.anterior; // El penúltimo nodo pasa a ser el nuevo tail
+                    tail.siguiente = null; // El nuevo tail ya no debe apuntar hacia adelante al nodo eliminado
+                }
+                // Caso 4: el nodo a eliminar está en medio de la lista (no es head ni tail)
+                else
+                {
+                    actual.anterior.siguiente = actual.siguiente; // El nodo anterior ahora apunta directamente al nodo siguiente del eliminado
+                    actual.siguiente.anterior = actual.anterior; // El nodo siguiente ahora apunta directamente al nodo anterior del eliminado
+                }
+
+                Console.WriteLine("Dato eliminado correctamente."); // Se confirma al usuario que el dato fue eliminado con éxito
+            }
+        }
+
+    }
+}
