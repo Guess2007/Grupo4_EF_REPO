@@ -158,33 +158,6 @@ namespace Arbol_binario_de_busqueda
     {
         static void Main(string[] args)
         {
-            ArbolAVL arbol = new ArbolAVL();
-
-            for (int i = 1; i <= 1000; i++)
-            {
-                arbol.Insertar(new operaciones
-                {
-                    cod_id = i.ToString("D4"),
-                    tipoOperacion = (TipoOperacion)(i % 4),
-                    monto = i * 10,
-                    sede = i % 2 == 0 ? "Lima" : "Cusco"
-                });
-            }
-
-            Console.WriteLine($"Altura del árbol con 1000 datos: {arbol.AlturaArbol()}");
-
-            operaciones encontrada = arbol.Buscar("0500");
-
-            if (encontrada != null)
-                Console.WriteLine($"Encontrada: {encontrada.cod_id} - {encontrada.tipoOperacion} - S/ {encontrada.monto} - {encontrada.sede}");
-            else
-                Console.WriteLine("No existe esa operación.");
-
-            Console.WriteLine(arbol.Buscar("9999") == null
-                ? "9999: no existe (correcto)"
-                : "9999: encontrada (error)");
-
-            Console.ReadKey();
         }
     }
 }
