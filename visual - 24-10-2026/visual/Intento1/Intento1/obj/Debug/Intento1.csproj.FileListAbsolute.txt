@@ -1,0 +1,15 @@
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\bin\Debug\Intento1.exe.config
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\bin\Debug\Intento1.exe
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\bin\Debug\Intento1.pdb
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.csproj.AssemblyReference.cache
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.ConsultaOperaciones.resources
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.Login.resources
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.MenuPrincipal.resources
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.Properties.Resources.resources
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.RegistroOperaciones.resources
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.ReversionAbonos.resources
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.csproj.GenerateResource.cache
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.exe
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.pdb
+C:\Users\LENOVO\OneDrive\CARPETA-COMPARTIDA\UPN-2026-2\ESTRUCTURA DE DATOS\PROYECTO\visual\Intento1\Intento1\obj\Debug\Intento1.exe.config
